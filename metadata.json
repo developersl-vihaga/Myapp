@@ -1,0 +1,6 @@
+{
+  "name": "Cloud APK Compiler",
+  "description": "An Android project manager and cloud compiler assistant that helps clone, analyze, debug, and compile Android repositories into APKs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
