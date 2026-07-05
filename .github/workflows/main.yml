@@ -1,0 +1,26 @@
+name: Extract ZIP to Repository Root
+
+on:
+  push:
+    branches: [ "main" ]   # ඔබගේ default branch එක main නම්. master නම් master දාන්න
+  workflow_dispatch:       # Manualව run කරන්නත් පුළුවන්
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Repository එක checkout කරන්න (මෙයින් cloud-apk-compiler.zip root එකට ලැබෙනවා)
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Zip file එක root එකටම extract කරන්න
+      - name: Extract cloud-apk-compiler.zip to root
+        run: |
+          echo "Extracting cloud-apk-compiler.zip to repository root..."
+          unzip -o cloud-apk-compiler.zip -d .
+          echo "Extraction completed!"
+
+      # 3. (විකල්ප) Extract වුණු files මොනවද කියලා බලන්න
+      - name: List all files after extraction
+        run: ls -la
